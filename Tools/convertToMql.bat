@@ -1,0 +1,1 @@
+..\Debug\MLEA.exe -func ConvertDataToMql -funcClass MLEA.TestTool -funcParam "e:\\forex\\ea_order.txt, D:\\Program Files\\MetaTrader 5\\MQL5\\Include\\Data\\ea_order.mqh"

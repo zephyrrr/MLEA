@@ -1,0 +1,7 @@
+LIBRARY	"QExportWrapper"
+EXPORTS
+	CreateExportService
+	DestroyExportService
+	SendTick
+	RegisterSymbol
+	UnregisterSymbol

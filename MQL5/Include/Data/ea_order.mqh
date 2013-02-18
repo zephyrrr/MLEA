@@ -1,0 +1,2 @@
+string m_historyDealsTxt[] = {
+};

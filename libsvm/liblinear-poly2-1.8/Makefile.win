@@ -1,0 +1,36 @@
+#You must ensure nmake.exe, cl.exe, link.exe are in system path.
+#VCVARS32.bat
+#Under dosbox prompt
+#nmake -f Makefile.win
+	 #-erase /Q *.obj $(TARGET)\.
+	 
+##########################################
+CXXC = cl.exe
+CFLAGS = -nologo -O2 -EHsc -I. -D __WIN32__ -D _CRT_SECURE_NO_DEPRECATE -D POLY2
+TARGET = windows
+
+all: $(TARGET)\linear-train.exe $(TARGET)\linear-predict.exe $(TARGET)\linear-toy.exe
+
+$(TARGET)\linear-train.exe: tron.obj eval.obj linear.obj train.c blas\*.c
+	$(CXX) $(CFLAGS) -Fe$(TARGET)\linear-train.exe tron.obj eval.obj linear.obj train.c blas\*.c
+
+$(TARGET)\linear-predict.exe: tron.obj eval.obj linear.obj predict.c blas\*.c
+	$(CXX) $(CFLAGS) -Fe$(TARGET)\linear-predict.exe tron.obj eval.obj linear.obj predict.c blas\*.c
+
+$(TARGET)\linear-toy.exe: tron.obj linear.obj blas\*.c svm-toy\windows\linear-toy.cpp
+	$(CXX) $(CFLAGS) svm-toy\windows\linear-toy.cpp blas\*.c tron.obj linear.obj user32.lib gdi32.lib comdlg32.lib  -Fe$(TARGET)\linear-toy.exe
+	
+linear.obj: linear.cpp linear.h
+	$(CXX) $(CFLAGS) -c linear.cpp
+
+tron.obj: tron.cpp tron.h
+	$(CXX) $(CFLAGS) -c tron.cpp
+
+eval.obj: eval.cpp eval.h linear.h
+	$(CXX) $(CFLAGS) -c eval.cpp
+	
+lib: linear.cpp linear.h linear.def tron.obj
+	$(CXX) $(CFLAGS) -LD linear.cpp tron.obj blas\*.c -Fe$(TARGET)\liblinear -link -DEF:linear.def 
+
+clean:
+	-erase /Q *.obj

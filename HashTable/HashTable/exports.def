@@ -1,0 +1,6 @@
+LIBRARY	"HashTable"
+EXPORTS
+	Get
+	Put
+	IsContain
+	GetSize

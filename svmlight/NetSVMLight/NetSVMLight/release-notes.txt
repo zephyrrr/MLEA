@@ -1,0 +1,6 @@
+v1.1:
+
+-minor bugfixes
+-now the Classify method of svm classify class automatically creates a file containing the incorrectly classified examples
+-made utilities methods more generic: they now accept a predicate to identify the negative instances from the dataset files
+-n-fold cross validation

@@ -1,0 +1,83 @@
+This extension of liblinear efficiently trains SVM with degree-2
+polynomial kernels. It is used for experiments in Section 5 of the
+following paper:
+
+Yin-Wen Chang, Cho-Jui Hsieh, Kai-Wei Chang, Michael Ringgaard, and
+Chih-Jen Lin, Low-Degree Polynomial Mapping of Data for SVM, 2009.
+http://www.csie.ntu.edu.tw/~cjlin/papers/lowpoly_journal.pdf
+
+It solves a linear SVM with degree-2 polynomial mappings of data.
+Current implementations supports L1- and L2-loss support vector
+machines (-s 1, 2, 3).
+
+We consider the following degree-2 polynomial mapping:
+
+phi(x)=[coef0, 
+	sqrt(2*coef0*gamma)*x_1, ..., sqrt(2*coef0*gamma)*x_n,
+	gamma*x_1^2, sqrt(2)*gamma*x_1*x_2, ..., sqrt(2)*gamma*x_1*x_n,
+	gamma*x_2^2, sqrt(2)*gamma*x_2*x_3, ..., sqrt(2)*gamma*x_2*x_n,
+	...,
+	gamma*x_n^2], 
+where 
+	x=[x_1, x_2, ..., x_n].
+
+The inner product of phi(u) and phi(v) is the polynomial kernel with
+the following form:
+
+phi(u)^T phi(v) = (gamma*u'*v + coef0)^2.
+
+Note that the primal variable w is now a
+((nr_feature+2)*(nr_feature+1)/2)*nr_class array, where nr_feature is
+the number of features.
+
+Usage
+=====
+
+The usage is the same as liblinear except the following additional options:
+
+-g gamma : the parameter for the polynomial mapping function (default 1)
+-r coef0 : the parameter for the polynomial mapping function (default 1)
+
+Note that their default values are different from those in libsvm.
+
+The option -B is disabled. 
+
+Difference to libsvm
+====================
+
+While this code and libsvm both support polynomial kernels, they
+differ in a bias term:
+
+Take L1-loss SVM as an example. Libsvm solves
+
+min_{w,b} w^Tw/2 + C \sum max(0, 1- y_i (w^T phi(x_i) + b))
+
+but here we solve
+
+min_w w^Tw/2 + C \sum max(0, 1- y_i w^T phi(x_i))
+
+Examples
+========
+
+For SVM with degree-2 polynomial kernels, this code is more efficient
+than libsvm in both training/testing phases.
+
+The following example (49,900 instances and 22 features; available on
+LIBSVM data sets) shows that the training/testing time is
+significantly reduced:
+
+> time liblinear-poly2/train -c 0.125 -g 32 -e 0.1 -s 3 -B -1 ijcnn1 ijcnn1.model
+Objective value = -360.564592
+10.660s
+
+> time liblinear-poly2/predict ijcnn1.t ijcnn1.model out
+Accuracy = 97.8397% (89720/91701)
+0.459s
+
+> time libsvm/svm-train -m 1000 -t 1 -d 2 -r 1 -c 0.125 -g 32 -e 0.1  ijcnn1 ijcnn1.model
+obj = -360.518117
+64.21s
+
+> time libsvm/svm-predict ijcnn1.t ijcnn1.model out
+Accuracy = 97.8408% (89721/91701) (classification)
+14.070s

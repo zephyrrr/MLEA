@@ -1,0 +1,29 @@
+Download eval.cpp, eval.h, and Makefile, and put them to the directory of LIBSVM (overwrite the old Makefile).
+Add
+
+	#include "eval.h"
+
+to svm-train.c and svm-predict.c.
+Replace
+
+	do_cross_validation();
+
+in the main() of svm-train.c with
+
+	double cv =  binary_class_cross_validation(&prob, &param, nr_fold);
+	printf("Cross Validation = %g%%\n",100.0*cv);
+
+Note that the percentage mark is necessary in order to use grid.py. No need to change other places where do_cross_validation() appears.
+Replace
+
+	predict(input,output);
+
+in main() of svm-predict.c with
+
+	binary_class_predict(input, output);
+
+Assign the global variable
+
+	double (*validation_function)(const dvec_t&, const ivec_t&) = auc;
+
+in eval.cpp to the evaluation function you preferred. You can also assign precision, recall, fscore, or bac here.

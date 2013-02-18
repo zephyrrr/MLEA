@@ -1,0 +1,64 @@
+LIBRARY	"AdoSuite.dll"
+EXPORTS
+	CreateManagedObject
+	DestroyManagedObject
+	
+	OpenDbConnection
+	CloseDbConnection
+	GetDbConnectionState
+	SetDbConnectionString
+	GetDbConnectionString
+	GetDbConnectionTimeout
+	DbConnectionTransaction
+	DbConnectionTransactionLevel
+	
+	SetDbParameterDirection
+	GetDbParameterDirection
+	SetDbParameterName
+	GetDbParameterName
+	GetDbParameterType
+	GetDbParameterValueBool
+	SetDbParameterValueBool
+	GetDbParameterValueLong
+	SetDbParameterValueLong
+	GetDbParameterValueDouble
+	SetDbParameterValueDouble
+	GetDbParameterValueString
+	SetDbParameterValueString
+	GetDbParameterValueDateTime
+	SetDbParameterValueDateTime
+	
+	DbParameterListAdd
+	DbParameterListRemove
+	
+	GetDbCommandParameterList
+	SetDbCommandText
+	GetDbCommandText
+	SetDbCommandTimeout
+	GetDbCommandTimeout
+	SetDbCommandType
+	GetDbCommandType
+	SetDbCommandConnection
+	SetDbCommandTransaction
+	DbCommandExecuteNonQuery
+	DbCommandExecuteReader
+	DbCommandExecuteScalar
+	DbCommandScalarGetBool
+	DbCommandScalarGetLong
+	DbCommandScalarGetDouble
+	DbCommandScalarGetString
+	DbCommandScalarGetDatetime
+	
+	CommitDbTransaction
+	RollbackDbTransaction
+	
+	DbDataReaderGetFieldsCount
+	DbDataReaderColumnScheme
+	DbDataReaderIsClosed	
+	DbDataReaderRead
+	DbDataReaderClose
+	DbReaderGetBool
+	DbReaderGetLong
+	DbReaderGetDouble
+	DbReaderGetString
+	DbReaderGetDateTime

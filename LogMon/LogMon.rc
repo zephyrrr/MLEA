@@ -1,0 +1,199 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// русски?resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREE                BITMAP                  "Resource\\4.bmp"
+IDB_BITMAP1             BITMAP                  "Resource\\152.bmp"
+IDB_BITMAP2             BITMAP                  "Resource\\empty.bmp"
+IDB_BITMAP3             BITMAP                  "Resource\\LogMsg.bmp"
+IDB_TBMON               BITMAP                  "Resource\\initMonitoring.bmp"
+IDB_TBDESTROY           BITMAP                  "Resource\\tb_destroy.bmp"
+IDB_FINDBUTTON          BITMAP                  "Resource\\find.bmp"
+IDB_ASCROLL             BITMAP                  "Resource\\autoscroll.bmp"
+IDB_TBTOP               BITMAP                  "Resource\\top.bmp"
+IDB_TBTOP16             BITMAP                  "Resource\\top16.bmp"
+IDB_BITMAPABOUT         BITMAP                  "Resource\\info.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_TRAY                ICON                    "Resource\\152.ico"
+IDI_ICON1               ICON                    "Resource\\my.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WAVE1               WAVE                    "Resource\\alert.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RESETDEL DIALOGEX 0, 0, 201, 26
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Delete, Flush"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Delete and flush",IDRESETDEL,6,6,77,12
+    PUSHBUTTON      "Cancel",IDCANCEL,145,6,50,12
+    PUSHBUTTON      "Flush",IDRESET,89,6,50,12
+END
+
+IDD_DIALOGVIEWMSG DIALOGEX 0, 0, 330, 102
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_OVERLAPPEDWINDOW | WS_EX_STATICEDGE
+CAPTION "Message"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,139,86,50,14
+    EDITTEXT        IDC_EDIT1,7,7,316,78,ES_MULTILINE | ES_AUTOVSCROLL | ES_NOHIDESEL | ES_READONLY | WS_VSCROLL
+END
+
+IDD_DIALOGABOUT DIALOGEX 0, 0, 268, 149
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "ОК",IDOK,108,132,50,14
+    LTEXT           "This program is intended to conveniently view and monitor logs. Freeware.",IDC_STATIC,30,3,208,20
+    EDITTEXT        IDC_EDIT2,23,33,222,96,ES_MULTILINE | ES_READONLY
+    LTEXT           "Idea and implementation - Dmitry Kucherov (mrProF) (c) 2010",IDC_STATIC,39,20,189,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_RESETDEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 21
+    END
+
+    IDD_DIALOGVIEWMSG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+    END
+
+    IDD_DIALOGABOUT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 261
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STRING_USCAN        "<Scanning...>"
+    IDS_STRING_UNFOUNDFOLDER """log"" folder wasn' found"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STRING_ULOGMSG      "Writing log:"
+    IDS_STRING_UFIND        "Search..."
+    IDS_STRING_UEOPENFILE   "Error opening file!"
+    IDS_STRING_UERROR       "Error!"
+    IDS_STRING_UEMPTY       "<Empty>"
+    IDS_STRING_UNSELECT     "Select element from the list!"
+    IDS_STRING_UEDELETE     "Error deleting file"
+    IDS_STRING_UDESTOY      "Delete file/folder. Flush list."
+    IDS_STRING_UTOP         "Always on top"
+    IDS_STRING_UMON         "Minimize window and enable monitoring of selected elements"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STRING_UFINDBUTTON  "Find/Find next"
+    IDS_STRING_UASCROLL     "Auto Scroll"
+    IDS_STRING_UABOUT       "Your feedback is welcome at mrprofx@gmail.com\r\nYou can show your gratitude by donating at WebMoney purses: \r\nWME:  E208097746186\r\nWMZ:  Z964679380070\r\nWMR:  R359436588880\r\nEvery donation is welcome \r\n\r\nThanks in advance ;-)"
+    IDS_STRING_UABOUTBUTTON "About..."
+END
+
+#endif    // русски?resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

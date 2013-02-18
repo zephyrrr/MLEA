@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "svmlight", "svmlight.vcxproj", "{75F0DE5F-6226-4BF3-97B0-F7FD8F4C2C40}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "svmperf", "svmperf.vcxproj", "{CFCA5B07-4F49-4D6A-B975-1D9D471ABBB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75F0DE5F-6226-4BF3-97B0-F7FD8F4C2C40}.Debug|Win32.ActiveCfg = Debug|Win32
+		{75F0DE5F-6226-4BF3-97B0-F7FD8F4C2C40}.Debug|Win32.Build.0 = Debug|Win32
+		{75F0DE5F-6226-4BF3-97B0-F7FD8F4C2C40}.Release|Win32.ActiveCfg = Release|Win32
+		{75F0DE5F-6226-4BF3-97B0-F7FD8F4C2C40}.Release|Win32.Build.0 = Release|Win32
+		{CFCA5B07-4F49-4D6A-B975-1D9D471ABBB6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CFCA5B07-4F49-4D6A-B975-1D9D471ABBB6}.Debug|Win32.Build.0 = Debug|Win32
+		{CFCA5B07-4F49-4D6A-B975-1D9D471ABBB6}.Release|Win32.ActiveCfg = Release|Win32
+		{CFCA5B07-4F49-4D6A-B975-1D9D471ABBB6}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

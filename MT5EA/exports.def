@@ -1,0 +1,10 @@
+LIBRARY	"MT5EA"
+EXPORTS
+	HelloDllTest
+	HelloServiceTest
+	CreateEAService
+	DestroyEAService
+	Train
+	Test
+	Now
+	
